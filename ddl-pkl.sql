@@ -7,9 +7,11 @@ CREATE TABLE city (
 );
 -- 2. **Create table referee**
 CREATE TABLE referee (
-    id    NUMBER(11) PRIMARY KEY,
+    id    NUMBER(11),
     name  VARCHAR(50) NOT NULL
+    
 );
+alter table referee add CONSTRAINT id_pk PRIMARY KEY(id);
 -- 3. **Create table innings**
 CREATE TABLE innings (
     id              NUMBER(11) PRIMARY KEY,
@@ -17,9 +19,11 @@ CREATE TABLE innings (
 );
 -- 4. **Create table extra_type**
 CREATE TABLE extra_type (
-    id    NUMBER(11) PRIMARY KEY,
-    name  VARCHAR(50) NOT NULL
+    id    NUMBER(11),
+    name  VARCHAR(50) NOT NULL,
+    CONSTRAINT extra_pk PRIMARY KEY(id)
 );
+drop table extra_type CASCADE CONSTRAINTS;
 -- 5. **Create table skill**
 CREATE TABLE skill (
     id    NUMBER(11) PRIMARY KEY,
